@@ -191,10 +191,22 @@ STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "sk_test_51QsL8sFtvDPVochCQLA
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:7000","http://127.0.0.1:5501","https://ecommerce-api.onrender.com","https://drf-2nd-ecommerce-backend.vercel.app/"
+    "http://127.0.0.1:7000",
+    "http://127.0.0.1:5500",  # Add this if not already present
+    "https://ecommerce-api.onrender.com",
+    "https://drf-2nd-ecommerce-backend.vercel.app/",
 ]
-CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:5501","https://ecommerce-api.onrender.com","https://drf-2nd-ecommerce-backend.vercel.app/"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:5500",  # Add this if not already present
+    "https://ecommerce-api.onrender.com",
+    "https://drf-2nd-ecommerce-backend.vercel.app/"
+]
+
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = ["*"]
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
