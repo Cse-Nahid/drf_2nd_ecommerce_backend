@@ -37,7 +37,7 @@ class UserRegistrationApiView(APIView):
             user = serializer.save()
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
-            confirm_link = f"https://easemart-api.onrender.com/users/activate/{uid}/{token}"
+            confirm_link = f"https://drf-2nd-ecommerce-backend.vercel.app/users/activate/{uid}/{token}"
 
             # Send confirmation email
             email_subject = "Confirm Your Email"
