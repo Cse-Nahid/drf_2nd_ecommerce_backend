@@ -175,6 +175,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',  
     ],
     
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',  # Make sure this is included
+    ],
 }
 
 
